@@ -1,0 +1,333 @@
+/* --- 1. FONTS & DESIGN VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    /* Soft Light Pastel Background with a hint of rose/cream wash */
+    --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
+    
+    /* Subtle Wine Accents (Used precisely like the red in the first ref) */
+    --wine-primary: #9f1239; /* Deep premium wine tone */
+    --wine-accent: linear-gradient(135deg, #9f1239 0%, #be123c 100%);
+    --wine-light: rgba(159, 18, 57, 0.06); /* Ultra-faint tint for hovers */
+    
+    /* Light Glass-morphism (Frosted White Look) */
+    --glass-panel: rgba(255, 255, 255, 0.45);
+    --glass-surface: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-blur: blur(25px);
+
+    /* Floating Shadows & Pillowy Edges from Nazar's Shot */
+    --panel-radius: 24px; 
+    --item-radius: 14px;
+    --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8); /* Crisp glass border light edge */
+
+    /* Typography Colors (Flipped for light-mode legibility) */
+    --text-pure: #0f172a;      /* Deep Slate/Charcoal */
+    --text-muted: #64748b;     /* Soft Cool Gray */
+    --text-wine: #881337;      /* Clear wine text for highlights */
+}
+
+/* --- 2. LAYOUT RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-pure);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    height: 900px;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* --- 3. SIDEBAR (Floating Light Glass Column) --- */
+.sidebar {
+    width: 280px;
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.logo-box {
+    padding: 0 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--wine-primary);
+    line-height: 1;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    color: var(--wine-primary);
+}
+
+/* Sidebar Menu List */
+.sidebar-menu {
+    flex: 1;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 6px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--item-radius);
+    transition: all 0.25s ease;
+}
+
+.sidebar-menu li a:hover {
+    color: var(--wine-primary);
+    background: var(--wine-light);
+}
+
+/* Active State (Pill highlight uses the solid Wine gradient) */
+.sidebar-menu li.active a {
+    background: var(--wine-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(159, 18, 57, 0.2);
+    font-weight: 600;
+}
+
+/* Sidebar Bottom Section */
+.bottom-menu {
+    padding: 25px 30px 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-link, .logout-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.settings-link:hover {
+    color: var(--text-pure);
+}
+
+.logout-icon {
+    width: 18px;
+    height: 18px;
+    stroke: var(--wine-primary);
+    transition: transform 0.2s ease;
+}
+
+.logout-link:hover {
+    color: var(--wine-primary);
+}
+
+.logout-link:hover .logout-icon {
+    transform: translateX(4px);
+}
+
+/* --- 4. MAIN CONTENT WORKSPACE --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- 5. TOPBAR NAVIGATION (Floating Light Panel) --- */
+.topbar {
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.left-section h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* Soft White-Glass Search Box */
+.search-box input {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    padding: 12px 24px;
+    width: 280px;
+    color: var(--text-pure);
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(159, 18, 57, 0.3);
+    box-shadow: 0 0 20px rgba(159, 18, 57, 0.08);
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Right Section Actions */
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.language-selector {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.action-icon-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-icon-btn:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-ui {
+    color: var(--text-pure);
+    font-size: 1.1rem;
+}
+
+/* User Profile Widget */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.avatar-box {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--item-radius);
+    border: 2px solid var(--wine-primary);
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.profile-info p {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* --- 6. MAIN CONTENT BODY (Floating Base Canvas) --- */
+.content-body {
+    flex: 1;
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 35px;
+}
+
+/* --- 7. RESPONSIVE DASHBOARD ADJUSTMENTS --- */
+@media (max-width: 1100px) {
+    .container {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 25px 0;
+    }
+    
+    .search-box input {
+        width: 200px;
+    }
+}
