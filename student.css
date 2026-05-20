@@ -1,0 +1,707 @@
+/* --- 1. FONTS & DESIGN VARIABLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    /* Soft Light Pastel Background with a hint of rose/cream wash */
+    --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
+    
+    /* Subtle Wine Accents */
+    --wine-primary: #9f1239; /* Deep premium wine tone */
+    --wine-accent: linear-gradient(135deg, #9f1239 0%, #be123c 100%);
+    --wine-light: rgba(159, 18, 57, 0.06); /* Ultra-faint tint for hovers */
+    
+    /* Light Glass-morphism (Frosted White Look) */
+    --glass-panel: rgba(255, 255, 255, 0.45);
+    --glass-surface: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-blur: blur(25px);
+
+    /* Floating Shadows & Pillowy Edges */
+    --panel-radius: 24px; 
+    --item-radius: 14px;
+    --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8); /* Crisp glass border light edge */
+
+    /* Typography Colors */
+    --text-pure: #0f172a;      /* Deep Slate/Charcoal */
+    --text-muted: #64748b;     /* Soft Cool Gray */
+    --text-wine: #881337;      /* Clear wine text for highlights */
+}
+
+/* --- 2. LAYOUT RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-pure);
+    min-height: 100vh;
+    display: flex;
+    padding: 30px 0;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Container restricts stretching layout structures to max content levels */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 900px;
+    height: max-content;
+    padding: 0 30px;
+    gap: 30px;
+}
+
+/* --- 3. SIDEBAR (Floating Light Glass Column) --- */
+.sidebar {
+    width: 280px;
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    position: sticky;
+    top: 30px;
+    height: calc(100vh - 60px);
+}
+
+.logo-box {
+    padding: 0 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--wine-primary);
+    line-height: 1;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    color: var(--wine-primary);
+}
+
+.sidebar-menu {
+    flex: 1;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 6px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--item-radius);
+    transition: all 0.25s ease;
+}
+
+.sidebar-menu li a:hover {
+    color: var(--wine-primary);
+    background: var(--wine-light);
+}
+
+.sidebar-menu li.active a {
+    background: var(--wine-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(159, 18, 57, 0.2);
+    font-weight: 600;
+}
+
+.bottom-menu {
+    padding: 25px 30px 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-link, .logout-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.settings-link:hover {
+    color: var(--text-pure);
+}
+
+.logout-icon {
+    width: 18px;
+    height: 18px;
+    stroke: var(--wine-primary);
+    transition: transform 0.2s ease;
+}
+
+.logout-link:hover {
+    color: var(--wine-primary);
+}
+
+.logout-link:hover .logout-icon {
+    transform: translateX(4px);
+}
+
+/* --- 4. MAIN CONTENT WORKSPACE --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- 5. TOPBAR NAVIGATION (Floating Light Panel) --- */
+.topbar {
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.left-section h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.search-box input {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    padding: 12px 24px;
+    width: 320px;
+    color: var(--text-pure);
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(159, 18, 57, 0.3);
+    box-shadow: 0 0 20px rgba(159, 18, 57, 0.08);
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.language-selector {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.action-icon-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.action-icon-btn:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.icon-ui {
+    color: var(--text-pure);
+    font-size: 1.1rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.avatar-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50% !important; /* Circular override rule */
+    border: 2px solid var(--wine-primary);
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.profile-info p {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* --- 6. MAIN CONTENT BODY WORKSPACE CANVAS --- */
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Base Glass Card Styles */
+.card {
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-badge {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--wine-primary);
+    background: rgba(159, 18, 57, 0.08);
+    padding: 6px 14px;
+    display: inline-block;
+}
+
+.action-buttons-group {
+    display: flex;
+    gap: 12px;
+}
+
+/* --- 7. DESIGN SYSTEM BUTTONS --- */
+.btn {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--wine-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(159, 18, 57, 0.12);
+}
+
+.btn-primary:hover {
+    background: #be123c;
+    box-shadow: 0 10px 24px rgba(159, 18, 57, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.60);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-pure);
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- 8. HORIZONTAL STACKED LAYOUT SYSTEM --- */
+.stacked-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.table-card-wrapper {
+    padding: 10px 0 0 0;
+    width: 100%;
+}
+
+/* --- 9. CENTRAL DATA TABLES --- */
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+}
+
+.dashboard-table th {
+    padding: 18px 24px;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-table td {
+    padding: 16px 24px;
+    vertical-align: middle;
+    color: var(--text-pure);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.col-checkbox { width: 40px; }
+.col-id { width: 85px; }
+.col-actions { width: 80px; text-align: right; }
+
+.text-id {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.text-semibold {
+    font-weight: 600;
+    color: var(--text-pure);
+}
+
+.text-right {
+    text-align: right;
+}
+
+.custom-checkbox {
+    accent-color: var(--wine-primary);
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.dashboard-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.dashboard-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dashboard-table tbody tr.selected-row {
+    background: rgba(159, 18, 57, 0.02);
+    box-shadow: inset 4px 0 0 var(--wine-primary);
+}
+
+.action-trigger-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-weight: bold;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.action-trigger-btn:hover {
+    color: var(--wine-primary);
+}
+
+.badge-class {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(15, 23, 42, 0.05);
+    color: var(--text-pure);
+    border-radius: var(--item-radius);
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.pagination-summary {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.page-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-pure);
+    font-weight: 600;
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background: #ffffff;
+    color: var(--wine-primary);
+    border-color: rgba(159, 18, 57, 0.2);
+}
+
+.page-indicator {
+    font-size: 0.9rem;
+    color: var(--text-pure);
+}
+
+/* --- 10. HORIZONTAL DUAL-PANEL PROFILE DETAILS Displays --- */
+.student-profile-horizontal-panel {
+    padding: 32px;
+    width: 100%;
+}
+
+.profile-horizontal-split {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Distinct asymmetric side-split grid */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left Column Identity Block Settings */
+.profile-card-left-identity {
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header-toolbar {
+    margin-bottom: 20px;
+}
+
+.profile-summary-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.profile-summary-identity .large-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50% !important; /* Circular formatting override rules */
+    border: 3px solid var(--wine-primary);
+    box-shadow: 0 8px 24px rgba(159, 18, 57, 0.12);
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.student-name {
+    font-family: 'Geist', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-pure);
+    margin-bottom: 6px;
+}
+
+.student-meta-subtext {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.divider-dot {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.panel-action-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.panel-action-footer .btn {
+    width: 100%;
+}
+
+/* Right Column Parameters Grid Column */
+.profile-details-right-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.panel-tab-bar {
+    display: flex;
+    max-width: 400px;
+    gap: 4px;
+    background: rgba(15, 23, 42, 0.04);
+    padding: 4px;
+    border-radius: var(--item-radius);
+}
+
+.panel-tab-bar .tab-link {
+    flex: 1;
+    border: none;
+    padding: 10px 0;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.panel-tab-bar .tab-link:hover {
+    color: var(--text-pure);
+}
+
+.panel-tab-bar .tab-link.active-tab {
+    background: #ffffff;
+    color: var(--wine-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Two column matrix metadata sheet layout */
+.horizontal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+}
+
+.info-data-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-data-row.span-two-columns {
+    grid-column: span 2;
+}
+
+.info-data-row label {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-data-value {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-pure);
+    line-height: 1.5;
+}
+
+/* --- 11. RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
+    .profile-horizontal-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .profile-card-left-identity {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-details-grid {
+        grid-template-columns: 1fr;
+    }
+    .info-data-row.span-two-columns {
+        grid-column: span 1;
+    }
+}
