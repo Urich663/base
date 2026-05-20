@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Directory | School Management System</title>
+  <link rel="stylesheet" href="student.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li class="active"><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notices.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Student</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search student...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Total Students: 24,506</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Data</button>
+            <button class="btn btn-primary">+ Add Student</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">ID</th>
+                  <th>Student Name</th>
+                  <th>Sex</th>
+                  <th>Class</th>
+                  <th>Amount</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#0447</td>
+                  <td class="text-semibold">Robert Fox</td>
+                  <td>Male</td>
+                  <td><span class="badge badge-class">1A</span></td>
+                  <td class="text-semibold">$250.00</td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#0448</td>
+                  <td class="text-semibold">Jane Cooper</td>
+                  <td>Female</td>
+                  <td><span class="badge badge-class">2B</span></td>
+                  <td class="text-semibold">$250.00</td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#0449</td>
+                  <td class="text-semibold">Wade Warren</td>
+                  <td>Male</td>
+                  <td><span class="badge badge-class">1A</span></td>
+                  <td class="text-semibold">$180.00</td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#0450</td>
+                  <td class="text-semibold">Esther Howard</td>
+                  <td>Female</td>
+                  <td><span class="badge badge-class">3C</span></td>
+                  <td class="text-semibold">$310.00</td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 4</strong> of 24,506 Entries</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 21</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">#0447 Overview</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="avatar-box large-avatar">
+                    <img src="avatar.png" alt="Student Profile Avatar" class="avatar-img">
+                  </div>
+                  <h3 class="student-name">Robert Fox</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Class 1A</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Male</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-secondary">Edit Profile</button>
+                  <button class="btn btn-primary">Send Report</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview</button>
+                  <button class="tab-link">Grades</button>
+                  <button class="tab-link">Attendance</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Email Address</label>
+                    <div class="info-data-value">robert.fox@email.com</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Age</label>
+                    <div class="info-data-value">17 Years Old</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Admission Number</label>
+                    <div class="info-data-value">ADM-2026-0447</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
