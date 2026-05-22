@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notices & Announcements | School Management System</title>
+  <link rel="stylesheet" href="notice.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li class="active"><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Notice</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by Notice ID, announcement keywords, or category...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Active Board Notices</span>
+            <span class="card-metric">24</span>
+            <span class="card-trend positive">Total Bulletins: 142 Issued</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Urgent Bulletins Flagged</span>
+            <span class="card-metric">03</span>
+            <span class="card-trend negative">Requires Immediate Read Receipt</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Scheduled Announcements</span>
+            <span class="card-metric">08</span>
+            <span class="card-trend neutral">Queued for Pipeline Delivery</span>
+          </div>
+          <div class="card">
+            <span class="card-label">System Delivery Index</span>
+            <span class="card-metric">99.4%</span>
+            <span class="card-trend positive">0 Failed Deliveries Reported</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Most Viewed Bulletin: "Second Term Mid-Examination Guidelines" tracked across 1,420 profiles</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Pin Important Notice</button>
+            <button class="btn btn-secondary">Archive Bulletins</button>
+            <button class="btn btn-primary">+ Create Notice</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <header class="table-card-header" style="padding: 10px 24px 15px;">
+              <h3 style="font-size: 1.1rem; font-weight: 800;">Notice Directory & Broadcast Pipeline</h3>
+            </header>
+            
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Notice ID</th>
+                  <th>Broadcast Title & Topic</th>
+                  <th>Notice Category</th>
+                  <th>Target Audience</th>
+                  <th>Priority Level</th>
+                  <th>Date Posted</th>
+                  <th>Delivery Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#NTC-4021</td>
+                  <td class="text-semibold">Emergency Infrastructure Refurbishment Scope</td>
+                  <td>Emergency</td>
+                  <td>All Users</td>
+                  <td><span class="badge badge-class text-absent">Urgent</span></td>
+                  <td>May 20, 2026</td>
+                  <td><span class="badge badge-class text-present">Sent</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#NTC-4022</td>
+                  <td class="text-semibold">Second Term Assessment Review Schedule</td>
+                  <td>Exam</td>
+                  <td>Students, Teachers</td>
+                  <td><span class="badge badge-class text-leave">High</span></td>
+                  <td>May 22, 2026</td>
+                  <td><span class="badge badge-class text-leave">Scheduled</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#NTC-4023</td>
+                  <td class="text-semibold">Outstanding PTA Levy Settlement Procedures</td>
+                  <td>Finance</td>
+                  <td>Parents Only</td>
+                  <td><span class="badge badge-class text-present">Medium</span></td>
+                  <td>May 14, 2026</td>
+                  <td><span class="badge badge-class text-present">Sent</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 3</strong> of 24 Active Entries</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 8</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">Broadcast Inspector (#NTC-4021)</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="notice-avatar-box">
+                    <span class="notice-symbol">📢</span>
+                  </div>
+                  <h3 class="student-name">Infrastructure Scope</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Posted By: Admin Desk</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Public Visibility</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Track Profile View Logs</button>
+                  <button class="btn btn-secondary">Edit Notice Configuration</button>
+                  <button class="btn btn-secondary">Send Bulk Announcements</button>
+                  <button class="btn btn-secondary">Upload Verification Attachments</button>
+                  <button class="btn btn-danger">Archive Notice Vault</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Notice Composition</button>
+                  <button class="tab-link">Recipients & Logs</button>
+                  <button class="tab-link">Notification Channels</button>
+                  <button class="tab-link">Comments & Feedback</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row span-two-columns">
+                    <label>Notice Content / Brief Description</label>
+                    <div class="info-data-value">
+                      Please note that all regional block expansions in the Northern Wing will undergo emergency seismic structural testing and grid reconfiguration starting this weekend. Alternative classroom mapping will be dispatched via institutional nodes.
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Attachment Files & Vault Repositories</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 structural_remapping_scope.pdf &nbsp;|&nbsp; 🖼 zone_map_elevation.png
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Lifecycle Dates & Expiry Index</label>
+                    <div class="info-data-value">Posted: May 20, 2026 &nbsp;|&nbsp; Expiry Lock: June 05, 2026</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Recipients Matrix Verification</label>
+                    <div class="info-data-value">1,450 Intended Targets &nbsp;•&nbsp; <span style="color: #16a34a; font-weight:700;">1,420 Verified Read Receipts</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Unread Notifications Delta</label>
+                    <div class="info-data-value" style="color: #ca8a04; font-weight: 700;">
+                      ⚠️ 30 Profiles Outstanding (Pending Portal Acknowledgment Sync)
+                    </div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Triggered Omni-Channel Broadcast Outbound Dispatch</label>
+                    <div class="info-data-value">
+                      📲 SMS Broadcast System (Dispatched) &nbsp;|&nbsp; ✉ Institutional Email Loop (Dispatched) &nbsp;|&nbsp; 🔔 In-App Push Overlay Node (Pinned Live)
+                    </div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Comments & Portal Responses Ledger Control</label>
+                    <div class="info-data-value">
+                      Moderated Student/Parent Thread Enabled (4 Clarification queries received and answered by administrative proctors)
+                    </div>
+                  </div>
+
+                </div> </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

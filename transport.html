@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transport & Fleet Management | School Management System</title>
+  <link rel="stylesheet" href="transport.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li class="active"><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Transport</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by Vehicle ID, driver name, route zones, or status...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Fleet Vehicles</span>
+            <span class="card-metric">18</span>
+            <span class="card-trend positive">Active Routes: 12 Zones</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Students Tracked Today</span>
+            <span class="card-metric">426</span>
+            <span class="card-trend positive">Attendance: 98.2% Checked</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Transport Fee Collection</span>
+            <span class="card-metric">84.5%</span>
+            <span class="card-trend neutral">Paid: 360 | Pending/Overdue: 66</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Fleet Status Matrix</span>
+            <span class="card-metric">15 / 3</span>
+            <span class="card-trend negative">3 Under Maintenance Logs</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">⚠️ Delayed Routes: Route 4 (Zone B East) reporting 15m delay due to ongoing regional grid upgrades</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Fleet Data</button>
+            <button class="btn btn-secondary">Send Fleet Alert</button>
+            <button class="btn btn-primary">+ Add Vehicle</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <header class="table-card-header" style="padding: 10px 24px 15px;">
+              <h3 style="font-size: 1.1rem; font-weight: 800;">Fleet Registry & Live Status</h3>
+            </header>
+            
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Vehicle ID</th>
+                  <th>Assigned Route Zone</th>
+                  <th>Driver Identity</th>
+                  <th>Seating Capacity</th>
+                  <th>GPS / Tracking Status</th>
+                  <th>Vehicle Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#BUS-04A</td>
+                  <td class="text-semibold">Route 4: Greater Accra Central Loop</td>
+                  <td>Emmanuel Mensah</td>
+                  <td>52 / 60 Capacity</td>
+                  <td><span class="badge badge-class text-present">● Live Active Tracking</span></td>
+                  <td><span class="badge badge-class text-present">Active State</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#BUS-09B</td>
+                  <td class="text-semibold">Route 9: Adenta-Madina Highway</td>
+                  <td>Kofi Boateng</td>
+                  <td>40 / 45 Capacity</td>
+                  <td><span class="badge badge-class text-present">● Live Active Tracking</span></td>
+                  <td><span class="badge badge-class text-present">Active State</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#BUS-12C</td>
+                  <td class="text-semibold">Route 12: Tema Harbor Line</td>
+                  <td>Kwame Attah</td>
+                  <td>00 / 50 (In Shop)</td>
+                  <td><span class="badge badge-class text-absent">○ Offline / Disabled</span></td>
+                  <td><span class="badge badge-class text-leave">Under Maintenance</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 3</strong> of 18 Active Vehicles</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 6</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">Fleet Asset Supervisor (#BUS-04A)</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="fleet-avatar-box">
+                    <span class="fleet-symbol">🚌</span>
+                  </div>
+                  <h3 class="student-name">Bus 04A (60-Seater)</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Drivers on Duty: 1</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">8 Available Seats</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Track Live GPS Coordinates</button>
+                  <button class="btn btn-secondary">Assign Driver / Crew</button>
+                  <button class="btn btn-secondary">Assign Students to Route</button>
+                  <button class="btn btn-secondary">Update Maintenance Log</button>
+                  <button class="btn btn-danger">Manage Transport Fees</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Route & Roster Overview</button>
+                  <button class="tab-link">Operations & Expenses</button>
+                  <button class="tab-link">Compliance Logs</button>
+                  <button class="tab-link">Document Center</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Driver Assignment & Credentials</label>
+                    <div class="info-data-value">Emmanuel Mensah &nbsp;•&nbsp; <span class="view-all-link" style="cursor:pointer;">+233 24 412 3456</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Scheduled Operations Windows</label>
+                    <div class="info-data-value">Departure: 06:15 AM &nbsp;|&nbsp; Drop-off Complete: 08:00 AM</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Assigned Route Waypoints & Core Stops</label>
+                    <div class="info-data-value">Anyaa Precinct (06:20) → Awoshie Market Junction (06:40) → Kaneshie Station Interchange (07:10) → School Gates Main Entrance (07:45).</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Assigned Students Cohort Roster</label>
+                    <div class="info-data-value">52 Total Members Scheduled &nbsp;•&nbsp; <span class="view-all-link" style="cursor:pointer;">View Complete List</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Transport Fees Compliance State</label>
+                    <div class="info-data-value">46 Paid (Clear Account) &nbsp;|&nbsp; 4 Pending &nbsp;|&nbsp; <span style="color: #dc2626; font-weight:700;">2 Overdue Arrears</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Fuel Consumption & Fleet Diagnostics</label>
+                    <div class="info-data-value">Consumption Index: 4.8 km/L &nbsp;|&nbsp; Fuel Tank Level: 74% Capacity</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Upcoming Maintenance Lifecycle Sync</label>
+                    <div class="info-data-value">Scheduled Inspection: June 14, 2026 (Oil, Brake Diagnostics & Emissions Testing)</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Incident / Accident Control Records Ledger</label>
+                    <div class="info-data-value" style="color: #16a34a; font-weight:700;">
+                      ✅ Flawless Operational Record: No incident reports logged on asset frame for current term cycle.
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Connected Compliance Vault Certificates</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 Registration_Asset_04A.pdf &nbsp;&nbsp;|&nbsp;&nbsp; 📄 Driver_Commercial_License.pdf
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Critical Compliance Deadlines</label>
+                    <div class="info-data-value">Fleet Insurance Expiry: Oct 2026 &nbsp;|&nbsp; License Validation Check: Valid</div>
+                  </div>
+
+                </div> </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teachers Management | School Management System</title>
+  <link rel="stylesheet" href="teachers.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li class="active"><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Teachers</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by name, ID, department...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Teachers</span>
+            <span class="card-metric">84</span>
+            <span class="card-trend neutral">Active Staff</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Present Today</span>
+            <span class="card-metric">78</span>
+            <span class="card-trend positive">92.8% Attendance</span>
+          </div>
+          <div class="card">
+            <span class="card-label">On Leave</span>
+            <span class="card-metric">4</span>
+            <span class="card-trend neutral">2 Approved Medical</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Pending Assignments</span>
+            <span class="card-metric">3</span>
+            <span class="card-trend positive">Schedules unverified</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Teacher-to-Student Ratio — 1:15</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Teacher Data</button>
+            <button class="btn btn-primary">+ Add Teacher</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Emp ID</th>
+                  <th>Teacher Name</th>
+                  <th>Department</th>
+                  <th>Assigned Classes</th>
+                  <th>Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#T01</td>
+                  <td class="text-semibold">Esther Howard</td>
+                  <td>Mathematics</td>
+                  <td>Grade 6A, Form 2B</td>
+                  <td><span class="badge badge-class text-present">Present</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#T02</td>
+                  <td class="text-semibold">Albert Flores</td>
+                  <td>Sciences</td>
+                  <td>Form 3C, Form 5A</td>
+                  <td><span class="badge badge-class text-present">Present</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#T03</td>
+                  <td class="text-semibold">Eleanor Pena</td>
+                  <td>Languages</td>
+                  <td>Grade 6B, Grade 6C</td>
+                  <td><span class="badge badge-class text-leave">On Leave</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#T04</td>
+                  <td class="text-semibold">Arlene McCoy</td>
+                  <td>Sciences</td>
+                  <td>Form 2B, Form 4A</td>
+                  <td><span class="badge badge-class text-absent">Absent</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 4</strong> of 84 Staff Entries</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 21</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card teacher-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">#T01 Overview</span>
+                </header>
+                
+                <div class="profile-summary-identity">
+                  <div class="avatar-box large-avatar">
+                    <img src="avatar.png" alt="Teacher Profile Avatar" class="avatar-img">
+                  </div>
+                  <h3 class="student-name">Esther Howard</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Dept. of Mathematics</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">8 Years Exp.</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-secondary">Edit Details</button>
+                  <button class="btn btn-secondary">Assign Classes</button>
+                  <button class="btn btn-primary">Send Message</button>
+                  <button class="btn btn-danger">Deactivate</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview</button>
+                  <button class="tab-link">Schedule</button>
+                  <button class="tab-link">Performance</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Assigned Subjects</label>
+                    <div class="info-data-value">Mathematics, Advanced Calculus</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Daily Workload / Timetable</label>
+                    <div class="info-data-value">4 Classes Today • <span class="view-all-link" style="cursor:pointer;">View Timetable</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Upcoming Class</label>
+                    <div class="info-data-value">13:00 — Form 2B Geometry (Room 302)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Total Students Assigned</label>
+                    <div class="info-data-value">142 Students Total</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Qualification</label>
+                    <div class="info-data-value">M.Sc. in Mathematics & Secondary Ed.</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Performance Metrics</label>
+                    <div class="info-data-value">
+                      Student Perf. Avg: <strong style="color: var(--text-pure);">88.4%</strong> &nbsp;|&nbsp;
+                      Evaluation Score: <strong style="color: #16a34a;">4.8 / 5.0</strong>
+                    </div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Assigned Tasks & Duties</label>
+                    <div class="info-data-value">Exam Supervision (Block B), Math Club Advisor</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Payroll Status</label>
+                    <div class="info-data-value" style="color: #16a34a; font-weight: 700;">Salary Paid (May 2026)</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Recent System Notifications</label>
+                    <div class="info-data-value" style="font-size: 0.88rem; color: var(--text-muted);">
+                      • Department Meeting scheduled for Friday 15:00<br>
+                      • Lesson plans for Week 4 submission deadline pending
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Verified Documents</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 Teaching_Certificate.pdf &nbsp;&nbsp; 📄 Employment_Contract_2026.pdf
+                    </div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Contact Information</label>
+                    <div class="info-data-value">
+                      esther.howard@school.com &nbsp;&nbsp;|&nbsp;&nbsp; +233 24 123 4567
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

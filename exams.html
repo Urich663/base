@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exams & Assessment Management | School Management System</title>
+  <link rel="stylesheet" href="exams.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li class="active"><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Exams</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by Exam ID, subject, room code, or invigilator...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Exams (Term 2)</span>
+            <span class="card-metric">48</span>
+            <span class="card-trend positive">Pass Rate: 87.4%</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Average Student Score</span>
+            <span class="card-metric">74.2%</span>
+            <span class="card-trend positive">Top Class: Form 2B (84.6%)</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Pending Results</span>
+            <span class="card-metric">12 Blocks</span>
+            <span class="card-trend negative">Failed Subjects Flagged: 3</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Upcoming Assessments</span>
+            <span class="card-metric">06</span>
+            <span class="card-trend neutral">Students Absent: 4 Reported</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Exam Schedule Notifications: Timetables fully cross-checked against room capacities</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Print Exam Timetable</button>
+            <button class="btn btn-secondary">Edit Grading System</button>
+            <button class="btn btn-primary">+ Create Exam</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <header class="table-card-header" style="padding: 10px 24px 15px;">
+              <h3 style="font-size: 1.1rem; font-weight: 800;">Academic Timetable & Registry</h3>
+            </header>
+            
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Exam ID</th>
+                  <th>Assessment / Subject</th>
+                  <th>Assigned Classes</th>
+                  <th>Exam Schedule Date</th>
+                  <th>Duration & Venue</th>
+                  <th>Publication Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#EXM-9011</td>
+                  <td class="text-semibold">Midterm Integrated Science</td>
+                  <td>Grade 6A, Grade 6B</td>
+                  <td>May 22, 2026</td>
+                  <td>09:00 AM (2h) — Assembly Hall</td>
+                  <td><span class="badge badge-class text-leave">Pending Scripts</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#EXM-9012</td>
+                  <td class="text-semibold">Core Mathematics Final</td>
+                  <td>Form 2A, Form 2B</td>
+                  <td>May 25, 2026</td>
+                  <td>01:30 PM (2.5h) — Block C Rm 10</td>
+                  <td><span class="badge badge-class text-present">Published</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#EXM-9013</td>
+                  <td class="text-semibold">English Literature Mock</td>
+                  <td>Form 3A Only</td>
+                  <td>May 28, 2026</td>
+                  <td>11:00 AM (2h) — Main Library</td>
+                  <td><span class="badge badge-class text-absent">Not Scheduled</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 3</strong> of 48 Scheduled Cycles</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 16</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">Assessment Inspector (#EXM-9011)</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="exam-icon-box">
+                    <span class="exam-symbol">📝</span>
+                  </div>
+                  <h3 class="student-name">Integrated Science</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Type: Midterm</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Term 2 Cycle</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Upload & Process Results</button>
+                  <button class="btn btn-secondary">Assign Invigilators</button>
+                  <button class="btn btn-secondary">Generate Report Cards</button>
+                  <button class="btn btn-secondary">Approve & Publish Results</button>
+                  <button class="btn btn-danger">Export Exam Reports</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview & Strategy</button>
+                  <button class="tab-link">Performance Analysis</button>
+                  <button class="tab-link">Rules & Incidents</button>
+                  <button class="tab-link">Document Vault</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Assigned Proctors & Invigilators</label>
+                    <div class="info-data-value">Sarah Cooper (Lead), Kwaku Mensah (Floor Marshal)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Total Registered Cohort</label>
+                    <div class="info-data-value">72 Students Registered &nbsp;•&nbsp; <span style="color: #16a34a; font-weight:700;">72 Verified Present</span></div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Subject Performance Matrix (Historical Benchmarks)</label>
+                    <div class="info-data-value">Previous Term Metric: Pass Rate 84.2% (Average Grade: B-). Current Target Threshold Set: 88.0%.</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Pass / Fail Forecast Statistics</label>
+                    <div class="info-data-value">Projected Pass: 65 &nbsp;|&nbsp; Projected Remedial Buffer: 7</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Top Performing Targets</label>
+                    <div class="info-data-value">Robert Fox (Grade 6A), Jane Cooper (Grade 6B)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Result Publication Tracking Pipeline</label>
+                    <div class="info-data-value" style="color: #ca8a04; font-weight: 700;">
+                      ⚠️ Scripts Processing In Progress (35/72 Graded by Department Admins)
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Malpractice / Incident Control Logs</label>
+                    <div class="info-data-value">✅ Clear Record: No disciplinary items reported on session floor</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Core Exam Instructions & Venue Guidelines</label>
+                    <div class="info-data-value">
+                      All scientific calculators must be cleared prior to entry. No digital wearables allowed. Desks spaced at 1.5m intervals.
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Connected Document Crypts</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 Master_Question_Paper_V2.pdf &nbsp;|&nbsp; 📄 Marking_Scheme_Final.pdf
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Upcoming Milestone Synchronizations</label>
+                    <div class="info-data-value">Parent Portal Push Scheduled automatically post Dean Approval authorization lock.</div>
+                  </div>
+
+                </div> </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,695 @@
+/* --- 1. FONTS & DESIGN VARIABLES (ORGANIC ROUNDED CONTINUITY) --- */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    /* Soft Light Pastel Background with rose/cream wash */
+    --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
+    
+    /* Premium Wine Accents */
+    --wine-primary: #9f1239; 
+    --wine-accent: linear-gradient(135deg, #9f1239 0%, #be123c 100%);
+    --wine-light: rgba(159, 18, 57, 0.06); 
+    
+    /* Light Glass-morphism (Frosted Transparent Surface Structure) */
+    --glass-panel: rgba(255, 255, 255, 0.45);
+    --glass-surface: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-blur: blur(25px);
+
+    /* Smooth Curves Design System Guidelines */
+    --panel-radius: 24px; 
+    --item-radius: 14px;
+    --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    /* Typography Color Palette */
+    --text-pure: #0f172a;      
+    --text-muted: #64748b;     
+    --text-wine: #881337;      
+}
+
+/* --- 2. LAYOUT RESET & BASE ARCHITECTURE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Geist', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-pure);
+    min-height: 100vh;
+    display: flex;
+    padding: 30px 0;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    min-height: 900px;
+    height: max-content;
+    padding: 0 30px;
+    gap: 30px;
+}
+
+/* --- 3. SIDEBAR NAVIGATION COLUMN --- */
+.sidebar {
+    width: 280px;
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    position: sticky;
+    top: 30px;
+    height: calc(100vh - 60px);
+}
+
+.logo-box {
+    padding: 0 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: var(--wine-primary);
+    line-height: 1;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    color: var(--wine-primary);
+}
+
+.sidebar-menu {
+    flex: 1;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0 15px;
+}
+
+.sidebar-menu li {
+    margin-bottom: 6px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--item-radius);
+    transition: all 0.25s ease;
+}
+
+.sidebar-menu li a:hover {
+    color: var(--wine-primary);
+    background: var(--wine-light);
+}
+
+.sidebar-menu li.active a {
+    background: var(--wine-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(159, 18, 57, 0.2);
+    font-weight: 600;
+}
+
+.bottom-menu {
+    padding: 25px 30px 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.settings-link, .logout-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--item-radius);
+    padding: 10px 14px;
+    transition: all 0.2s ease;
+}
+
+.settings-link:hover, .active-link {
+    color: var(--wine-primary);
+    background: var(--wine-light);
+    font-weight: 700;
+}
+
+.logout-icon { width: 18px; height: 18px; stroke: var(--wine-primary); transition: transform 0.2s ease; }
+.logout-link:hover { color: var(--wine-primary); }
+.logout-link:hover .logout-icon { transform: translateX(4px); }
+
+/* --- 4. MAIN LAYOUT CONTAINER ARCHITECTURE --- */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.topbar {
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.left-section h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.search-box input {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    padding: 12px 24px;
+    width: 360px;
+    color: var(--text-pure);
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(159, 18, 57, 0.3);
+    box-shadow: 0 0 20px rgba(159, 18, 57, 0.08);
+}
+
+.search-box input::placeholder { color: var(--text-muted); }
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.language-selector {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.action-icon-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--item-radius);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-ui { color: var(--text-pure); font-size: 1.1rem; }
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.avatar-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--wine-primary);
+    overflow: hidden;
+}
+
+.avatar-img { width: 100%; height: 100%; object-fit: cover; }
+.profile-info h4 { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
+.profile-info p { font-family: 'Rethink Sans', sans-serif; font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+
+.content-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    background: var(--glass-panel);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--panel-radius);
+    box-shadow: var(--float-shadow);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 5. FOUR-COLUMN OPERATIONS MATRIX GRID --- */
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card-label {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.card-metric {
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-pure);
+    margin-bottom: 8px;
+}
+
+.card-trend {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+.card-trend.positive { color: #16a34a; }
+.card-trend.neutral { color: var(--text-muted); }
+.card-trend.negative { color: #dc2626; }
+
+.header-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-badge {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--wine-primary);
+    background: rgba(159, 18, 57, 0.08);
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: var(--item-radius);
+}
+
+.action-buttons-group { display: flex; gap: 12px; }
+
+/* --- 6. CORE ACTION SYSTEM CONTROLS --- */
+.btn {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--wine-accent);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(159, 18, 57, 0.12);
+}
+
+.btn-primary:hover {
+    background: #be123c;
+    box-shadow: 0 10px 24px rgba(159, 18, 57, 0.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.60);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-pure);
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+    background: rgba(159, 18, 57, 0.05);
+    color: var(--wine-primary);
+    border: 1px solid rgba(159, 18, 57, 0.15);
+}
+
+.btn-danger:hover {
+    background: var(--wine-primary);
+    color: #ffffff;
+}
+
+.compact-btn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+
+/* --- 7. SPLIT SYSTEM CONFIGURATION CONTAINER --- */
+.profile-horizontal-split {
+    display: grid;
+    grid-template-columns: 340px 1fr; 
+    gap: 30px;
+    align-items: start;
+}
+
+/* Left Column Categories Menu Layout */
+.profile-card-left-identity {
+    border-right: none;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header-toolbar { 
+    margin-bottom: 24px; 
+    font-family: 'Geist', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.profile-summary-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.settings-symbol-box {
+    width: 84px;
+    height: 84px;
+    border-radius: var(--item-radius);
+    background: rgba(159, 18, 57, 0.06);
+    border: 2px solid rgba(159, 18, 57, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.settings-main-symbol { font-size: 2.2rem; }
+.student-name { font-family: 'Geist', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text-pure); margin-bottom: 6px; }
+
+.student-meta-subtext {
+    display: flex;
+    justify-content: center;
+}
+
+/* Left Subsystem Navigation Blueprint */
+.settings-category-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.settings-category-menu .menu-item {
+    background: transparent;
+    border: none;
+    text-align: left;
+    padding: 14px 18px;
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.settings-category-menu .menu-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--text-pure);
+}
+
+.settings-category-menu .menu-item.active {
+    background: var(--wine-light);
+    color: var(--wine-primary);
+    font-weight: 700;
+    box-shadow: inset 4px 0 0 var(--wine-primary);
+}
+
+/* Right Details Dynamic Configuration Board Matrices */
+.profile-details-right-pane {
+    padding: 35px;
+}
+
+.panel-tab-bar {
+    display: flex;
+    max-width: 580px;
+    gap: 4px;
+    background: rgba(15, 23, 42, 0.04);
+    padding: 4px;
+    border-radius: var(--item-radius);
+    margin-bottom: 30px;
+}
+
+.panel-tab-bar .tab-link {
+    flex: 1;
+    border: none;
+    padding: 11px 0;
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
+}
+
+.panel-tab-bar .tab-link.active-tab {
+    background: #ffffff;
+    color: var(--wine-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.horizontal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 30px;
+}
+
+.section-title-divider {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+}
+
+.section-title-divider h4 {
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--wine-primary);
+}
+
+.info-data-row { display: flex; flex-direction: column; gap: 8px; }
+.info-data-row.span-two-columns { grid-column: span 2; }
+
+.info-data-row label {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.info-data-value {
+    font-family: 'Rethink Sans', sans-serif;
+    color: var(--text-pure);
+}
+
+/* --- 8. PRESET INPUT FIELD CONTROLS --- */
+.form-input-node, .form-select-node {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--item-radius);
+    padding: 12px 18px;
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-pure);
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.25s ease;
+}
+
+.form-input-node:focus, .form-select-node:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(159, 18, 57, 0.3);
+    box-shadow: 0 0 15px rgba(159, 18, 57, 0.06);
+}
+
+.file-upload-zone-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+    padding: 10px 18px;
+    border-radius: var(--item-radius);
+}
+
+.file-uploaded-label {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-pure);
+}
+
+.color-picker-coupling {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-color-node {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: transparent;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border-radius: var(--item-radius);
+}
+
+.color-code-subtext {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Toggle Control Switch Architecture */
+.toggle-switch-coupling-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    padding: 12px 18px;
+    border-radius: var(--item-radius);
+}
+
+.toggle-explanation {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-pure);
+}
+
+.switch-ui-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+}
+
+.switch-ui-wrapper input { opacity: 0; width: 0; height: 0; }
+
+.switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #cbd5e1;
+    transition: .3s;
+    border-radius: 30px !important;
+}
+
+.switch-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50% !important;
+}
+
+input:checked + .switch-slider { background: var(--wine-accent); }
+input:checked + .switch-slider:before { transform: translateX(22px); }
+
+/* Form Anchor Toolbar Bottom Alignment Module */
+.form-action-anchor-panel {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 24px;
+}
+
+/* --- 9. CLASS BADGING SPECIFICATIONS --- */
+.badge-class {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: var(--item-radius);
+}
+.text-present { background: rgba(22, 163, 74, 0.1); color: #16a34a; }
+
+/* --- 10. RESPONSIVE MEDIA BREAKPOINTS --- */
+@media (max-width: 1200px) {
+    .container { padding: 0 20px; }
+    .profile-horizontal-split { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+    .horizontal-details-grid { grid-template-columns: 1fr; }
+    .info-data-row.span-two-columns { grid-column: span 1; }
+    .form-action-anchor-panel { flex-direction: column-reverse; }
+    .form-action-anchor-panel .btn { width: 100%; }
+}

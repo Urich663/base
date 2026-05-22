@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parents Directory | School Management System</title>
+  <link rel="stylesheet" href="parents.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li class="active"><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Parents</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by name, ID, student or phone...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Parents</span>
+            <span class="card-metric">14,320</span>
+            <span class="card-trend neutral">Registered Guardians</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Active Portal Accounts</span>
+            <span class="card-metric">12,840</span>
+            <span class="card-trend positive">89.6% Active Status</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Pending Payments</span>
+            <span class="card-metric">412</span>
+            <span class="card-trend neutral">Fee Reminders Sent</span>
+          </div>
+          <div class="card">
+            <span class="card-label">PTA Participation</span>
+            <span class="card-metric">94.2%</span>
+            <span class="card-trend positive">+2.4% Meeting Rate</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Unlinked Student Status: 0 Accounts Pending Link</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Parent Records</button>
+            <button class="btn btn-primary">+ Add Parent/Guardian</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Parent ID</th>
+                  <th>Parent/Guardian Name</th>
+                  <th>Contact Number</th>
+                  <th>Linked Student(s)</th>
+                  <th>Fee Payment Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#P-0892</td>
+                  <td class="text-semibold">Michael Fox</td>
+                  <td>+233 24 456 7890</td>
+                  <td>Robert Fox (Class 1A)</td>
+                  <td><span class="badge badge-class text-present">Paid</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#P-0893</td>
+                  <td class="text-semibold">Sarah Cooper</td>
+                  <td>+233 55 123 4567</td>
+                  <td>Jane Cooper (Class 2B), Tom Cooper (3A)</td>
+                  <td><span class="badge badge-class text-leave">Pending</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#P-0894</td>
+                  <td class="text-semibold">David Warren</td>
+                  <td>+233 20 987 6543</td>
+                  <td>Wade Warren (Class 1A)</td>
+                  <td><span class="badge badge-class text-absent">Overdue</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 3</strong> of 14,320 Entries</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 4,774</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">#P-0892 Overview</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="avatar-box large-avatar">
+                    <img src="avatar.png" alt="Parent Profile Avatar" class="avatar-img">
+                  </div>
+                  <h3 class="student-name">Michael Fox</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Relationship: Father</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Portal Active</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Send SMS/Email</button>
+                  <button class="btn btn-secondary">View Payment History</button>
+                  <button class="btn btn-secondary">Reset Password</button>
+                  <button class="btn btn-danger">Suspend Account</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview</button>
+                  <button class="tab-link">Activity Logs</button>
+                  <button class="tab-link">Permissions</button>
+                  <button class="tab-link">Documents</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Email Address</label>
+                    <div class="info-data-value">michael.fox@email.com</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Occupation</label>
+                    <div class="info-data-value">Software Engineer</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Home Address</label>
+                    <div class="info-data-value">Plot 45, Kumasi Residential Area, Kumasi – Ghana</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Linked Children Registered</label>
+                    <div class="info-data-value">1 Child (<span class="view-all-link" style="cursor:pointer;">View Student Profile</span>)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Emergency Contact Status</label>
+                    <div class="info-data-value" style="color: #16a34a; font-weight: 700;">✅ Primary Responder Verified</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Outstanding Financial Balance</label>
+                    <div class="info-data-value">$0.00 <span class="badge badge-class text-present" style="margin-left:8px;">No Arrears</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Recent Transaction</label>
+                    <div class="info-data-value">$250.00 paid for Term 2 Fees (Receipt #REC-9821)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>PTA Meeting Attendance</label>
+                    <div class="info-data-value">Attended 4 / 4 Meetings (100% Rate)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Parent Portal Activity</label>
+                    <div class="info-data-value">Last login: Today, 10:24 AM</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Permissions & Consent Signed</label>
+                    <div class="info-data-value">✔ Field Trip Approved &nbsp;|&nbsp; ✔ Medical Emergency Treatment Consent</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Communication Alerts</label>
+                    <div class="info-data-value">Opted-in for SMS Announcements, Fee Reminders, and Termly Student Reports</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Uploaded Verification Documents</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 National_ID_Upload.pdf &nbsp;&nbsp;|&nbsp;&nbsp; 📄 Signed_Consent_Form_2026.pdf
+                    </div>
+                  </div>
+
+                </div> </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

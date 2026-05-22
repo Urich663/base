@@ -46,7 +46,7 @@ body {
     justify-content: center;
 }
 
-/* Container restricts stretching layout structures to max content levels */
+/* Container limits canvas extension without breaking workspace vertical coordinates */
 .container {
     display: flex;
     width: 100%;
@@ -172,7 +172,7 @@ body {
     transform: translateX(4px);
 }
 
-/* --- 4. MAIN CONTENT WORKSPACE --- */
+/* --- 4. MAIN WORKSPACE CONTENT CONTAINER --- */
 .main-content {
     flex: 1;
     display: flex;
@@ -180,7 +180,7 @@ body {
     gap: 30px;
 }
 
-/* --- 5. TOPBAR NAVIGATION (Floating Light Panel) --- */
+/* Top Navigation Bar */
 .topbar {
     background: var(--glass-panel);
     backdrop-filter: var(--glass-blur);
@@ -211,7 +211,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: var(--item-radius);
     padding: 12px 24px;
-    width: 320px;
+    width: 360px;
     color: var(--text-pure);
     font-family: 'Rethink Sans', sans-serif;
     font-size: 0.9rem;
@@ -254,12 +254,6 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.action-icon-btn:hover {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .icon-ui {
@@ -278,7 +272,7 @@ body {
 .avatar-box {
     width: 44px;
     height: 44px;
-    border-radius: 50% !important; /* Circular override rule */
+    border-radius: 50% !important; /* System override enforcing proper round radius constraints */
     border: 2px solid var(--wine-primary);
     overflow: hidden;
 }
@@ -302,14 +296,13 @@ body {
     font-weight: 600;
 }
 
-/* --- 6. MAIN CONTENT BODY WORKSPACE CANVAS --- */
 .content-body {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* Base Glass Card Styles */
+/* Base Glass Card Component */
 .card {
     background: var(--glass-panel);
     backdrop-filter: var(--glass-blur);
@@ -321,6 +314,42 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+/* --- 5. FOUR COLUMN SUMMARY METRICS ROW --- */
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.card-label {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.card-metric {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-pure);
+    margin-bottom: 8px;
+}
+
+.card-trend {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-trend.positive { color: #16a34a; }
+.card-trend.neutral { color: var(--text-muted); }
+.card-trend.negative { color: #dc2626; }
 
 .header-action-row {
     display: flex;
@@ -343,7 +372,7 @@ body {
     gap: 12px;
 }
 
-/* --- 7. DESIGN SYSTEM BUTTONS --- */
+/* --- 6. DESIGN SYSTEM UI BUTTON NODES --- */
 .btn {
     font-family: 'Geist', sans-serif;
     font-weight: 700;
@@ -381,7 +410,18 @@ body {
     border-color: rgba(0, 0, 0, 0.1);
 }
 
-/* --- 8. HORIZONTAL STACKED LAYOUT SYSTEM --- */
+.btn-danger {
+    background: rgba(220, 38, 38, 0.08);
+    color: #dc2626;
+    border: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+/* --- 7. STACKED WORKSPACE SHEET ARCHITECTURE --- */
 .stacked-layout-container {
     display: flex;
     flex-direction: column;
@@ -390,11 +430,11 @@ body {
 }
 
 .table-card-wrapper {
-    padding: 10px 0 0 0;
+    padding: 20px 0 0 0;
     width: 100%;
 }
 
-/* --- 9. CENTRAL DATA TABLES --- */
+/* --- 8. DATA LEDGER TABLES --- */
 .dashboard-table {
     width: 100%;
     border-collapse: collapse;
@@ -422,7 +462,7 @@ body {
 }
 
 .col-checkbox { width: 40px; }
-.col-id { width: 85px; }
+.col-id { width: 110px; }
 .col-actions { width: 80px; text-align: right; }
 
 .text-id {
@@ -431,30 +471,14 @@ body {
     color: var(--text-muted);
 }
 
-.text-semibold {
-    font-weight: 600;
-    color: var(--text-pure);
-}
+.text-semibold { font-weight: 600; color: var(--text-pure); }
+.text-right { text-align: right; }
+.custom-checkbox { accent-color: var(--wine-primary); cursor: pointer; width: 16px; height: 16px; }
 
-.text-right {
-    text-align: right;
-}
+.text-income { color: #16a34a; font-weight: 700; }
+.text-expense { color: #dc2626; font-weight: 700; }
 
-.custom-checkbox {
-    accent-color: var(--wine-primary);
-    cursor: pointer;
-    width: 16px;
-    height: 16px;
-}
-
-.dashboard-table tbody tr {
-    transition: background 0.2s ease;
-}
-
-.dashboard-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
+.dashboard-table tbody tr:hover { background: rgba(255, 255, 255, 0.3); }
 .dashboard-table tbody tr.selected-row {
     background: rgba(159, 18, 57, 0.02);
     box-shadow: inset 4px 0 0 var(--wine-primary);
@@ -468,11 +492,6 @@ body {
     font-weight: bold;
     color: var(--text-muted);
     font-size: 1.1rem;
-    transition: color 0.2s;
-}
-
-.action-trigger-btn:hover {
-    color: var(--wine-primary);
 }
 
 .badge-class {
@@ -480,10 +499,11 @@ body {
     padding: 4px 10px;
     font-size: 0.8rem;
     font-weight: 700;
-    background: rgba(15, 23, 42, 0.05);
-    color: var(--text-pure);
     border-radius: var(--item-radius);
 }
+.text-present { background: rgba(22, 163, 74, 0.1); color: #16a34a; }
+.text-leave { background: rgba(234, 179, 8, 0.1); color: #ca8a04; }
+.text-absent { background: rgba(220, 38, 38, 0.1); color: #dc2626; }
 
 .table-footer {
     display: flex;
@@ -494,17 +514,8 @@ body {
     background: rgba(255, 255, 255, 0.15);
 }
 
-.pagination-summary {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-}
-
-.pagination-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
+.pagination-summary { font-size: 0.88rem; color: var(--text-muted); }
+.pagination-controls { display: flex; align-items: center; gap: 14px; }
 .page-btn {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -514,24 +525,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-pure);
-    font-weight: 600;
     border-radius: var(--item-radius);
-    transition: all 0.2s ease;
 }
 
-.page-btn:hover {
-    background: #ffffff;
-    color: var(--wine-primary);
-    border-color: rgba(159, 18, 57, 0.2);
-}
-
-.page-indicator {
-    font-size: 0.9rem;
-    color: var(--text-pure);
-}
-
-/* --- 10. HORIZONTAL DUAL-PANEL PROFILE DETAILS Displays --- */
+/* --- 9. HORIZONTAL DUAL-PANEL DATA DRAWER --- */
 .student-profile-horizontal-panel {
     padding: 32px;
     width: 100%;
@@ -539,12 +536,12 @@ body {
 
 .profile-horizontal-split {
     display: grid;
-    grid-template-columns: 320px 1fr; /* Distinct asymmetric side-split grid */
+    grid-template-columns: 320px 1fr; /* Rigid asymmetric design boundary rules locked */
     gap: 40px;
     align-items: start;
 }
 
-/* Left Column Identity Block Settings */
+/* Left Column Context Summary Identity Settings */
 .profile-card-left-identity {
     border-right: 1px solid rgba(0, 0, 0, 0.06);
     padding-right: 40px;
@@ -564,19 +561,26 @@ body {
     margin-bottom: 24px;
 }
 
-.profile-summary-identity .large-avatar {
+.receipt-icon-box {
     width: 96px;
     height: 96px;
-    border-radius: 50% !important; /* Circular formatting override rules */
+    border-radius: 50% !important; /* Uniform circle formatting geometry system lock */
+    background: rgba(159, 18, 57, 0.08);
     border: 3px solid var(--wine-primary);
-    box-shadow: 0 8px 24px rgba(159, 18, 57, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 16px;
-    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(159, 18, 57, 0.12);
+}
+
+.receipt-symbol {
+    font-size: 2.5rem;
 }
 
 .student-name {
     font-family: 'Geist', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--text-pure);
     margin-bottom: 6px;
@@ -591,9 +595,7 @@ body {
     align-items: center;
 }
 
-.divider-dot {
-    color: rgba(0, 0, 0, 0.2);
-}
+.divider-dot { color: rgba(0, 0, 0, 0.2); }
 
 .panel-action-footer {
     display: flex;
@@ -606,7 +608,7 @@ body {
     width: 100%;
 }
 
-/* Right Column Parameters Grid Column */
+/* Right Column Parameters Matrix Sheet */
 .profile-details-right-pane {
     display: flex;
     flex-direction: column;
@@ -615,7 +617,7 @@ body {
 
 .panel-tab-bar {
     display: flex;
-    max-width: 400px;
+    max-width: 480px;
     gap: 4px;
     background: rgba(15, 23, 42, 0.04);
     padding: 4px;
@@ -636,17 +638,12 @@ body {
     transition: all 0.2s ease;
 }
 
-.panel-tab-bar .tab-link:hover {
-    color: var(--text-pure);
-}
-
 .panel-tab-bar .tab-link.active-tab {
     background: #ffffff;
     color: var(--wine-primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
 
-/* Two column matrix metadata sheet layout */
 .horizontal-details-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -680,28 +677,14 @@ body {
     line-height: 1.5;
 }
 
-/* --- 11. RESPONSIVE BREAKPOINTS --- */
+/* --- 10. RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 1200px) {
-    .container {
-        padding: 0 20px;
-    }
-    .profile-horizontal-split {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .profile-card-left-identity {
-        border-right: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-        padding-right: 0;
-        padding-bottom: 30px;
-    }
+    .container { padding: 0 20px; }
+    .profile-horizontal-split { grid-template-columns: 1fr; gap: 30px; }
+    .profile-card-left-identity { border-right: none; border-bottom: 1px solid rgba(0, 0, 0, 0.06); padding-right: 0; padding-bottom: 30px; }
 }
 
 @media (max-width: 768px) {
-    .horizontal-details-grid {
-        grid-template-columns: 1fr;
-    }
-    .info-data-row.span-two-columns {
-        grid-column: span 1;
-    }
+    .horizontal-details-grid { grid-template-columns: 1fr; }
+    .info-data-row.span-two-columns { grid-column: span 1; }
 }

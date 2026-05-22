@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Management | School Management System</title>
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li class="active"><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Account</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search invoices, transactions, receipt numbers...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Income (Monthly Revenue)</span>
+            <span class="card-metric">GHS 184,250</span>
+            <span class="card-trend positive">Net Balance: GHS 124,100</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Total Expenses</span>
+            <span class="card-metric">GHS 60,150</span>
+            <span class="card-trend neutral">Salaries Paid: GHS 42,000</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Pending Fees</span>
+            <span class="card-metric">GHS 31,400</span>
+            <span class="card-trend neutral">Invoice Records Issued</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Overdue Payments</span>
+            <span class="card-metric">GHS 12,850</span>
+            <span class="card-trend negative">Fee Defaulters Flagged</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Cash Flow Summary: GHS +124,100 Current Term Surplus</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Financial Reports</button>
+            <button class="btn btn-secondary">+ Add Expenses</button>
+            <button class="btn btn-primary">Generate Invoice</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <header class="table-card-header" style="padding: 10px 24px 15px;">
+              <h3 style="font-size: 1.1rem; font-weight: 800;">Recent Transactions Ledger</h3>
+            </header>
+            
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Txn ID</th>
+                  <th>Reference / Entity</th>
+                  <th>Category</th>
+                  <th>Method</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#TXN-9821</td>
+                  <td class="text-semibold">Robert Fox (Student Fee)</td>
+                  <td>Tuition / Admission</td>
+                  <td>Mobile Money</td>
+                  <td class="text-semibold text-income">GHS 1,500.00</td>
+                  <td><span class="badge badge-class text-present">Paid</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#TXN-9822</td>
+                  <td class="text-semibold">Kwame Mensah (Teacher Salary)</td>
+                  <td>Payroll / Staff</td>
+                  <td>Bank Transfer</td>
+                  <td class="text-semibold text-expense">-GHS 3,800.00</td>
+                  <td><span class="badge badge-class text-present">Paid</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#TXN-9823</td>
+                  <td class="text-semibold">Jane Cooper (Student Fee)</td>
+                  <td>Transport / Hostel</td>
+                  <td>Cash</td>
+                  <td class="text-semibold text-income">GHS 450.00</td>
+                  <td><span class="badge badge-class text-leave">Pending</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#TXN-9824</td>
+                  <td class="text-semibold">Wade Warren (Student Fee)</td>
+                  <td>Tuition / Exam</td>
+                  <td>Card</td>
+                  <td class="text-semibold text-income">GHS 1,200.00</td>
+                  <td><span class="badge badge-class text-absent">Overdue</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 4</strong> of 1,248 Transactions</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 312</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">Transaction Inspector (#TXN-9821)</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="receipt-icon-box">
+                    <span class="receipt-symbol">🧾</span>
+                  </div>
+                  <h3 class="student-name">GHS 1,500.00</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class text-present">Receipt Managed</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Cleared</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Approve Payment</button>
+                  <button class="btn btn-secondary">Print Receipt</button>
+                  <button class="btn btn-secondary">Send Payment Reminder</button>
+                  <button class="btn btn-secondary">Track Fee Defaulters</button>
+                  <button class="btn btn-danger">Process Payroll Alert</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview</button>
+                  <button class="tab-link">Budget Allocation</button>
+                  <button class="tab-link">Audit Logs</button>
+                  <button class="tab-link">Tax Records</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Payer / Payee Entity</label>
+                    <div class="info-data-value">Michael Fox (Guardian of Robert Fox #0447)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Payment Method Specified</label>
+                    <div class="info-data-value">Mobile Money (MTN MoMo - Ref: 0244567890)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Allocation Stream</label>
+                    <div class="info-data-value">Departmental Spending &gt; Grade 1 Tuition Pool</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Scholarships / Discounts Applied</label>
+                    <div class="info-data-value">None (Standard Termly Rate)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Exam & Transport Fees Included</label>
+                    <div class="info-data-value">Exam Fee: GHS 150.00 | Transport / Hostel: GHS 300.00</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Accountant Activity Log</label>
+                    <div class="info-data-value">Processed by Senior Accountant (Abigail Mensah) at 11:14 AM</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Financial Notification Status Alerts</label>
+                    <div class="info-data-value" style="color: #16a34a; font-weight: 700;">
+                      ✔ Invoice records successfully updated &nbsp;|&nbsp; ✔ Automated SMS notification sent to Parent Gateway
+                    </div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Bank Clearing Details</label>
+                    <div class="info-data-value">Ecobank Ghana Corporate Pool — Batch Ref #ECO-9812-A</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Financial Reports Cycle</label>
+                    <div class="info-data-value">Monthly: May 2026 | Termly: Term 2 Ledger | Annual: FY26</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>

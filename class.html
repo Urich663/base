@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Management | School Management System</title>
+  <link rel="stylesheet" href="class.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="logo-box">
+        <span class="logo-icon">∞</span>
+        <span class="logo-text">UISOCIAL</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="base.html"><span class="menu-text">Dashboard</span></a></li>
+          <li><a href="student.html"><span class="menu-text">Student</span></a></li>
+          <li><a href="teachers.html"><span class="menu-text">Teachers</span></a></li>
+          <li><a href="parents.html"><span class="menu-text">Parents</span></a></li>
+          <li><a href="account.html"><span class="menu-text">Account</span></a></li>
+          <li class="active"><a href="class.html"><span class="menu-text">Class</span></a></li>
+          <li><a href="exams.html"><span class="menu-text">Exams</span></a></li>
+          <li><a href="transport.html"><span class="menu-text">Transport</span></a></li>
+          <li><a href="notice.html"><span class="menu-text">Notice</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="bottom-menu">
+        <a href="settings.html" class="settings-link">
+          <span class="icon">⚙</span>
+          <span class="link-text">Setting</span>
+        </a>
+        <a href="schportaLogin.html" class="logout-link">
+          <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 3H3v18h7" />
+            <polyline points="15 8 20 12 15 16" />
+            <line x1="20" y1="12" x2="10" y2="12" />
+          </svg>
+          <span class="link-text">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="left-section">
+          <h2>Class</h2>
+          <div class="search-box">
+            <input type="text" placeholder="Search by class name, homeroom teacher, or room number...">
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
+          <div class="user-profile">
+            <div class="avatar-box">
+              <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
+            </div>
+            <div class="profile-info">
+              <h4>Adam Aryern</h4>
+              <p>Admin</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content-body">
+
+        <div class="dashboard-overview">
+          <div class="card">
+            <span class="card-label">Total Classes</span>
+            <span class="card-metric">32</span>
+            <span class="card-trend positive">Best: Form 2B (88.4%)</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Average Attendance</span>
+            <span class="card-metric">94.6%</span>
+            <span class="card-trend positive">Daily Rate Monitored</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Available Classroom Space</span>
+            <span class="card-metric">48 Slots</span>
+            <span class="card-trend neutral">Total Capacity: 1,200</span>
+          </div>
+          <div class="card">
+            <span class="card-label">Upcoming Class Activities</span>
+            <span class="card-metric">14</span>
+            <span class="card-trend neutral">Tests, Excursions & Events</span>
+          </div>
+        </div>
+
+        <div class="header-action-row">
+          <div class="badge-wrapper">
+            <span class="total-badge">Class Teacher Assignments: 100% Fully Staffed</span>
+          </div>
+          <div class="action-buttons-group">
+            <button class="btn btn-secondary">Export Class Data</button>
+            <button class="btn btn-secondary">Promote Students</button>
+            <button class="btn btn-primary">+ Create Class</button>
+          </div>
+        </div>
+
+        <div class="stacked-layout-container">
+          
+          <div class="card table-card-wrapper">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th class="col-checkbox"><input type="checkbox" class="custom-checkbox"></th>
+                  <th class="col-id">Class ID</th>
+                  <th>Class Name</th>
+                  <th>Homeroom / Class Teacher</th>
+                  <th>Students Registered</th>
+                  <th>Average Grade</th>
+                  <th>Daily Attendance</th>
+                  <th class="col-actions">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected-row">
+                  <td><input type="checkbox" checked class="custom-checkbox"></td>
+                  <td class="text-id">#CLS-G6A</td>
+                  <td class="text-semibold">Grade 6A</td>
+                  <td>Sarah Cooper</td>
+                  <td>35 / 40 Capacity</td>
+                  <td>84.2% (A-)</td>
+                  <td><span class="badge badge-class text-present">96.8%</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#CLS-F2B</td>
+                  <td class="text-semibold">Form 2B</td>
+                  <td>Michael Fox</td>
+                  <td>38 / 40 Capacity</td>
+                  <td>88.4% (A)</td>
+                  <td><span class="badge badge-class text-present">98.1%</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="custom-checkbox"></td>
+                  <td class="text-id">#CLS-L3A</td>
+                  <td class="text-semibold">Form 3A</td>
+                  <td>David Warren</td>
+                  <td>40 / 40 Capacity</td>
+                  <td>71.5% (C+)</td>
+                  <td><span class="badge badge-class text-leave">91.4%</span></td>
+                  <td class="text-right"><button class="action-trigger-btn">⋮</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <footer class="table-footer">
+              <span class="pagination-summary">Showing <strong>1 to 3</strong> of 32 Academic Blocks</span>
+              <div class="pagination-controls">
+                <button class="page-btn">&lt;</button>
+                <span class="page-indicator">Page <strong>1</strong> of 11</span>
+                <button class="page-btn">&gt;</button>
+              </div>
+            </footer>
+          </div>
+
+          <div class="card student-profile-horizontal-panel">
+            
+            <div class="profile-horizontal-split">
+              
+              <div class="profile-card-left-identity">
+                <header class="panel-header-toolbar">
+                  <span class="text-id">Class Workspace (#CLS-G6A)</span>
+                </header>
+
+                <div class="profile-summary-identity">
+                  <div class="class-avatar-box">
+                    <span class="class-symbol">🏫</span>
+                  </div>
+                  <h3 class="student-name">Grade 6A</h3>
+                  <div class="student-meta-subtext">
+                    <span class="badge badge-class">Level: Primary</span>
+                    <span class="divider-dot">•</span>
+                    <span class="gender-text">Room 204 (Block B)</span>
+                  </div>
+                </div>
+
+                <footer class="panel-action-footer">
+                  <button class="btn btn-primary">Assign Class Teacher</button>
+                  <button class="btn btn-secondary">Add/Remove Students</button>
+                  <button class="btn btn-secondary">Assign Subjects</button>
+                  <button class="btn btn-secondary">Upload Timetable</button>
+                  <button class="btn btn-danger">Generate Class Reports</button>
+                </footer>
+              </div>
+
+              <div class="profile-details-right-pane">
+                
+                <nav class="panel-tab-bar">
+                  <button class="tab-link active-tab">Overview</button>
+                  <button class="tab-link">Class Schedule</button>
+                  <button class="tab-link">Student List</button>
+                  <button class="tab-link">Documents</button>
+                </nav>
+
+                <div class="panel-details-pane horizontal-details-grid">
+                  
+                  <div class="info-data-row">
+                    <label>Homeroom Class Teacher</label>
+                    <div class="info-data-value">Sarah Cooper (Senior Academic Advisor)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Male / Female Ratio</label>
+                    <div class="info-data-value">18 Males &nbsp;|&nbsp; 17 Females</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Assigned Subjects & Instructors</label>
+                    <div class="info-data-value">Mathematics (M. Fox), Integrated Science (S. Cooper), English Lit (D. Warren)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Performance Statistics</label>
+                    <div class="info-data-value">Class Average: **84.2%** &nbsp;•&nbsp; <span class="view-all-link" style="cursor:pointer;">View Rankings</span></div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Best-Performing Students</label>
+                    <div class="info-data-value">Robert Fox (97.4%), Kwame Boateng (96.1%)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Upcoming Class Activities</label>
+                    <div class="info-data-value">📝 Midterm Test (May 22) &nbsp;|&nbsp; 🚌 Kakum National Park Excursion (June 04)</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Behavior / Discipline Status</label>
+                    <div class="info-data-value" style="color: #16a34a; font-weight: 700;">✅ Excellent Core Compliance Record</div>
+                  </div>
+
+                  <div class="info-data-row span-two-columns">
+                    <label>Class Announcements & Notices</label>
+                    <div class="info-data-value">Parents are reminded to sign up for the Term 2 Science Fair project frameworks by Friday evening.</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Class Financial Status (Term Fees)</label>
+                    <div class="info-data-value">92% Fees Paid &nbsp;|&nbsp; 8% Outstanding Arrears Pending</div>
+                  </div>
+
+                  <div class="info-data-row">
+                    <label>Active Document Repositories</label>
+                    <div class="info-data-value" style="font-size: 0.88rem;">
+                      📄 Master_Timetable_T2.pdf &nbsp;&nbsp;|&nbsp;&nbsp; 📄 Syllabus_Orientation_Notes.pdf
+                    </div>
+                  </div>
+
+                </div> </div>
+
+            </div> </div> </div> </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
