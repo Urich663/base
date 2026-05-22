@@ -5,7 +5,7 @@
     /* Soft Light Pastel Background with a hint of rose/cream wash */
     --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
     
-    /* Subtle Wine Accents (Used precisely like the red in the first ref) */
+    /* Subtle Wine Accents */
     --wine-primary: #9f1239; /* Deep premium wine tone */
     --wine-accent: linear-gradient(135deg, #9f1239 0%, #be123c 100%);
     --wine-light: rgba(159, 18, 57, 0.06); /* Ultra-faint tint for hovers */
@@ -22,7 +22,7 @@
     --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 
                     inset 0 1px 0 rgba(255, 255, 255, 0.8); /* Crisp glass border light edge */
 
-    /* Typography Colors (Flipped for light-mode legibility) */
+    /* Typography Colors */
     --text-pure: #0f172a;      /* Deep Slate/Charcoal */
     --text-muted: #64748b;     /* Soft Cool Gray */
     --text-wine: #881337;      /* Clear wine text for highlights */
@@ -278,7 +278,7 @@ body {
 .avatar-box {
     width: 44px;
     height: 44px;
-    border-radius: var(--item-radius);
+    border-radius: 50%;
     border: 2px solid var(--wine-primary);
     overflow: hidden;
 }
@@ -302,19 +302,207 @@ body {
     font-weight: 600;
 }
 
-/* --- 6. MAIN CONTENT BODY (Floating Base Canvas) --- */
+/* --- 6. MAIN CONTENT BODY WORKSPACE CANVAS --- */
+/* FIXED: Stripped duplicate glass background, filters, and shadows */
 .content-body {
     flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Base Glass Card Styles - Now floats independently on the canvas background gradient */
+.card {
     background: var(--glass-panel);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
     border-radius: var(--panel-radius);
     box-shadow: var(--float-shadow);
-    padding: 35px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- 7. RESPONSIVE DASHBOARD ADJUSTMENTS --- */
+/* --- 7. TOP STATISTICAL CARDS ROW --- */
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.card-label {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.card-metric {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text-pure);
+    margin-bottom: 8px;
+}
+
+.card-trend {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-trend.positive {
+    color: #16a34a; /* Emerald green highlight for upward trends */
+}
+
+.card-trend.neutral {
+    color: var(--text-muted);
+}
+
+/* --- 8. BOTTOM DETAILS GRID SECTION --- */
+.dashboard-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Gender Analytics Card Specifics */
+.gender-split-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gender-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.gender-percentage {
+    color: var(--wine-primary);
+}
+
+/* Progress Indicator Tracks */
+.ratio-bar-track {
+    background: rgba(15, 23, 42, 0.06);
+    height: 8px;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.ratio-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+}
+
+.male-fill {
+    background: var(--wine-primary);
+    width: 52%;
+}
+
+.female-fill {
+    background: var(--wine-accent);
+    width: 48%;
+}
+
+/* Calendar Card Specifics */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.calendar-header .card-label {
+    margin-bottom: 0;
+}
+
+.view-all-link {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--wine-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.view-all-link:hover {
+    color: #be123c;
+    text-decoration: underline;
+}
+
+/* Events List Structure */
+.events-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.event-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    border-radius: var(--item-radius);
+    transition: background 0.2s ease;
+}
+
+.event-item:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.event-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 3px;
+    color: var(--text-pure);
+}
+
+.event-location {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Event Date Badging */
+.event-date-badge {
+    text-align: right;
+    font-family: 'Rethink Sans', sans-serif;
+    min-width: 80px;
+}
+
+.event-day {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--wine-primary);
+    line-height: 1.2;
+}
+
+.event-year {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* --- 9. RESPONSIVE LAYOUT ADJUSTMENTS --- */
 @media (max-width: 1100px) {
     .container {
         height: auto;
@@ -329,5 +517,11 @@ body {
     
     .search-box input {
         width: 200px;
+    }
+}
+
+@media (max-width: 968px) {
+    .dashboard-details-grid {
+        grid-template-columns: 1fr;
     }
 }
