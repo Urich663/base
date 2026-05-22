@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard | School Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <title>System Infrastructure Dashboard | School Management System</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
   <div class="container">
 
     <aside class="sidebar">
-
       <div class="logo-box">
         <span class="logo-icon">∞</span>
         <span class="logo-text">UISOCIAL</span>
@@ -20,7 +19,7 @@
       <nav class="sidebar-menu">
         <ul>
           <li class="active">
-            <a href="index.html">
+            <a href="base.html">
               <span class="menu-text">Dashboard</span>
             </a>
           </li>
@@ -60,7 +59,7 @@
             </a>
           </li>
           <li>
-            <a href="notices.html">
+            <a href="notice.html">
               <span class="menu-text">Notice</span>
             </a>
           </li>
@@ -72,7 +71,6 @@
           <span class="icon">⚙</span>
           <span class="link-text">Setting</span>
         </a>
-        
         <a href="schportaLogin.html" class="logout-link">
           <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M10 3H3v18h7" />
@@ -82,155 +80,164 @@
           <span class="link-text">Logout</span>
         </a>
       </div>
-
     </aside>
 
     <main class="main-content">
 
       <header class="topbar">
-
         <div class="left-section">
           <h2>Dashboard</h2>
           <div class="search-box">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search system infrastructure nodes...">
           </div>
         </div>
 
         <div class="right-section">
-
-          <div class="language-selector">
-            🌐 EN
-          </div>
-
-          <button class="action-icon-btn" aria-label="Messages">
-            <span class="icon-ui">✉</span>
-          </button>
-
-          <button class="action-icon-btn" aria-label="Notifications">
-            <span class="icon-ui">🔔</span>
-          </button>
-
+          <div class="language-selector">🌐 EN</div>
+          <button class="action-icon-btn" aria-label="Messages"><span class="icon-ui">✉</span></button>
+          <button class="action-icon-btn" aria-label="Notifications"><span class="icon-ui">🔔</span></button>
           <div class="user-profile">
             <div class="avatar-box">
               <img src="avatar.png" alt="Adam Aryern Profile Avatar" class="avatar-img">
             </div>
             <div class="profile-info">
               <h4>Adam Aryern</h4>
-              <p>Admin</p>
+              <p>Admin Cluster</p>
             </div>
           </div>
-
         </div>
-
       </header>
 
       <section class="content-body">
-
-        <div class="content-body">
-
-    <section class="dashboard-overview">
-
-      <div class="card">
-        <span class="card-label">Total Students</span>
-        <h3 class="card-metric">1,250</h3>
-        <span class="card-trend positive">+12 this week</span>
-      </div>
-
-      <div class="card">
-        <span class="card-label">Total Teachers</span>
-        <h3 class="card-metric">85</h3>
-        <span class="card-trend neutral">Active Faculty</span>
-      </div>
-
-      <div class="card">
-        <span class="card-label">Non-Teaching Staff</span>
-        <h3 class="card-metric">42</h3>
-        <span class="card-trend neutral">Support Personnel</span>
-      </div>
-
-      <div class="card">
-        <span class="card-label">Registered Parents</span>
-        <h3 class="card-metric">970</h3>
-        <span class="card-trend positive">Guardians Linked</span>
-      </div>
-
-    </section>
-
-    <section class="dashboard-details-grid">
-
-      <div class="card gender-ratio-card">
-        <span class="card-label">Gender Distribution</span>
-        
-        <div class="gender-split-wrapper">
-          <div class="gender-row">
-            <div class="gender-meta">
-              <span>Male Students</span>
-              <span class="gender-percentage">52%</span>
-            </div>
-            <div class="ratio-bar-track">
-              <div class="ratio-bar-fill male-fill"></div>
-            </div>
-          </div>
-
-          <div class="gender-row">
-            <div class="gender-meta">
-              <span>Female Students</span>
-              <span class="gender-percentage">48%</span>
-            </div>
-            <div class="ratio-bar-track">
-              <div class="ratio-bar-fill female-fill"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card calendar-events-card">
-        <div class="calendar-header">
-          <span class="card-label">Upcoming Academic Events</span>
-          <a href="#" class="view-all-link">View Calendar</a>
-        </div>
-
-        <ul class="events-list">
+        <div class="dashboard-structured-grid">
           
-          <li class="event-item">
-            <div class="event-details">
-              <h4 class="event-title">PTA General Assembly Meeting</h4>
-              <span class="event-location">Main Auditorium</span>
+          <div class="dashboard-row dynamic-row-one">
+            
+            <div class="matrix-tile identity-large-card">
+              <div class="tile-meta">
+                <span class="tile-tag">Active Identity Nodes</span>
+                <span class="live-pulse-indicator"></span>
+              </div>
+              <div class="identity-display-wrapper">
+                <h3 class="tile-value-large">1,420</h3>
+                <div class="identity-sub-metrics">
+                  <div class="metric-pill positive">● 94% Session Concurrency</div>
+                  <div class="metric-pill neutral">Active Sync Processes</div>
+                </div>
+              </div>
             </div>
-            <div class="event-date-badge">
-              <div class="event-day">12 Sept</div>
-              <div class="event-year">2026</div>
-            </div>
-          </li>
 
-          <li class="event-item">
-            <div class="event-details">
-              <h4 class="event-title">Midterm Assessment Examinations</h4>
-              <span class="event-location">All Grade Blocks</span>
+            <div class="matrix-tile cluster-state-card">
+              <span class="tile-tag">System Cluster State</span>
+              <h3 class="tile-value">Operational</h3>
+              <span class="tile-status status-positive">● All Submodules Synced Fully</span>
             </div>
-            <div class="event-date-badge">
-              <div class="event-day">18 Sept</div>
-              <div class="event-year">2026</div>
+
+          </div>
+
+          <div class="dashboard-row dynamic-row-two">
+            
+            <div class="matrix-tile calendar-table-card">
+              <header class="calendar-card-header">
+                <div class="header-left">
+                  <h3 class="calendar-title">Academic Schedule Calendar</h3>
+                  <p class="calendar-subtitle">Term II Operational Matrix View</p>
+                </div>
+                <span class="term-badge">May 2026 Scope</span>
+              </header>
+              
+              <div class="table-container">
+                <table class="calendar-data-table">
+                  <thead>
+                    <tr>
+                      <th>Event Interval</th>
+                      <th>Task Description</th>
+                      <th>Target Block</th>
+                      <th>Status State</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="date-column">May 12, 2026</td>
+                      <td class="desc-column">PTA General Assembly Cluster Meeting</td>
+                      <td>Main Auditorium</td>
+                      <td><span class="status-indicator live">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td class="date-column">May 14, 2026</td>
+                      <td class="desc-column">Midterm Assessment System Deployments</td>
+                      <td>All Grade Blocks</td>
+                      <td><span class="status-indicator current">Today</span></td>
+                    </tr>
+                    <tr>
+                      <td class="date-column">May 18, 2026</td>
+                      <td class="desc-column">Inter-Schools Sports Festival Registration</td>
+                      <td>Sports Grounds</td>
+                      <td><span class="status-indicator pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                      <td class="date-column">May 25, 2026</td>
+                      <td class="desc-column">Secondary Ledger Reconciliation Audits</td>
+                      <td>Administration</td>
+                      <td><span class="status-indicator pending">Pending</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </li>
 
-          <li class="event-item">
-            <div class="event-details">
-              <h4 class="event-title">Annual Inter-Schools Sports Festival</h4>
-              <span class="event-location">Sports Complex Grounds</span>
+            <div class="stats-subgrid-container">
+              
+              <div class="small-metrics-binary-grid">
+                
+                <div class="matrix-tile small-metric-card-centered">
+                  <span class="tile-tag">Cloud File Vault</span>
+                  <h4 class="tile-value-centered">42.8 GB</h4>
+                  <span class="tile-status-centered status-neutral">68% Available Space</span>
+                </div>
+
+                <div class="matrix-tile small-metric-card-centered">
+                  <span class="tile-tag">Security Index</span>
+                  <h4 class="tile-value-centered">00 Alerts</h4>
+                  <span class="tile-status-centered status-positive">● 2FA Active</span>
+                </div>
+
+                <div class="matrix-tile small-metric-card-centered">
+                  <span class="tile-tag">Backup Integrity</span>
+                  <h4 class="tile-value-centered">Secured</h4>
+                  <span class="tile-status-centered status-positive">● Daily Sync Valid</span>
+                </div>
+
+                <div class="matrix-tile small-metric-card-centered">
+                  <span class="tile-tag">API Pipeline</span>
+                  <h4 class="tile-value-centered">100%</h4>
+                  <span class="tile-status-centered status-positive">● Webhooks Live</span>
+                </div>
+
+              </div>
+
+              <div class="matrix-tile system-interval-countdown-card">
+                <div class="countdown-text-content">
+                  <div class="countdown-decor-shield">⏳ SYSTEM INTERVAL</div>
+                  <h2 class="countdown-timer-value">14 Days</h2>
+                  <p class="countdown-description-label">Remaining until Academic Session Break &amp; Ledger Roll-over</p>
+                  <div class="countdown-footer-progress-track">
+                    <div class="progress-bar-fill-node" style="width: 82%;"></div>
+                  </div>
+                </div>
+                
+                <div class="floating-illustration-space-wrapper">
+                  <div class="floating-glass-sphere-element"></div>
+                  <div class="floating-orb-secondary"></div>
+                </div>
+              </div>
+
             </div>
-            <div class="event-date-badge">
-              <div class="event-day">25 Sept</div>
-              <div class="event-year">2026</div>
-            </div>
-          </li>
 
-        </ul>
-      </div>
+          </div>
 
-    </section>
-
-        </section>
+        </div>
+      </section>
 
     </main>
 
