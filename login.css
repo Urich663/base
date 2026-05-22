@@ -118,22 +118,32 @@ input[type="password"] {
 
 /* --- BUTTONS & LINKS --- */
 form button, .login-btn {
+    display: flex;                   /* Ensures anchor <a> tags respect width, height, and alignment */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;           /* Removes default link underline if using an <a> tag */
+    box-sizing: border-box;          /* Prevents padding from breaking the 100% width layout */
+    
     width: 100%;
     padding: 15px;
     margin-top: 10px;
     border: none;
-    border-radius: 12px;
+    border-radius: 12px;             /* Retains smooth rounded profile */
     background-color: var(--primary-red);
-    color: white;
+    color: white;                    /* Explicitly forces text color for links */
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, colors 0.3s ease;
 }
 
-form button:hover {
+/* Combined hover selector ensuring both buttons and link elements update correctly */
+form button:hover, .login-btn:hover {
     background-color: #b71c1c;
+    color: white;                    /* Prevents default browser link color changes on hover */
+    text-decoration: none;           /* Reinforces underline removal on hover */
 }
 
 .forgot-link {
