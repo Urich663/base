@@ -1,34 +1,36 @@
-/* --- 1. FONTS & DESIGN VARIABLES --- */
+/* --- 1. FONTS & DESIGN ARCHITECTURE SYSTEM --- */
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
 :root {
     /* Soft Light Pastel Background with a hint of rose/cream wash */
     --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
     
-    /* Subtle Wine Accents */
-    --wine-primary: #9f1239; /* Deep premium wine tone */
-    --wine-accent: linear-gradient(135deg, #9f1239 0%, #be123c 100%);
-    --wine-light: rgba(159, 18, 57, 0.06); /* Ultra-faint tint for hovers */
+    /* Deep Wine Luxury Accents */
+    --wine-primary: #9f1239; 
+    --wine-accent: linear-gradient(135deg, #881337 0%, #be123c 100%);
+    --wine-light: rgba(159, 18, 57, 0.05); 
     
-    /* Light Glass-morphism (Frosted White Look) */
+    /* Pure Frosted Look Glassmorphism Layout Layers */
     --glass-panel: rgba(255, 255, 255, 0.45);
     --glass-surface: rgba(255, 255, 255, 0.75);
-    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.60);
     --glass-blur: blur(25px);
 
-    /* Floating Shadows & Pillowy Edges from Nazar's Shot */
+    /* Enforced Uniform Organic Radii */
     --panel-radius: 24px; 
     --item-radius: 14px;
-    --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.06), 
-                    inset 0 1px 0 rgba(255, 255, 255, 0.8); /* Crisp glass border light edge */
+    
+    /* Clean Box Shadows */
+    --float-shadow: 0 20px 40px rgba(15, 23, 42, 0.04), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 
-    /* Typography Colors */
-    --text-pure: #0f172a;      /* Deep Slate/Charcoal */
-    --text-muted: #64748b;     /* Soft Cool Gray */
-    --text-wine: #881337;      /* Clear wine text for highlights */
+    /* Typography Color Hierarchy */
+    --text-pure: #0f172a;      
+    --text-muted: #64748b;     
+    --text-wine: #881337;      
 }
 
-/* --- 2. LAYOUT RESET & BASE --- */
+/* --- 2. THE STRUCTURAL SHEET RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -43,18 +45,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px 0;
+    overflow-x: hidden;
 }
 
 .container {
     display: flex;
     width: 100%;
     max-width: 1440px;
-    height: 900px;
-    padding: 30px;
+    padding: 0 30px;
     gap: 30px;
 }
 
-/* --- 3. SIDEBAR (Floating Light Glass Column) --- */
+/* --- 3. FLOATING SIDEBAR NAVIGATION DESIGN --- */
 .sidebar {
     width: 280px;
     background: var(--glass-panel);
@@ -66,6 +69,9 @@ body {
     display: flex;
     flex-direction: column;
     padding: 40px 0;
+    position: sticky;
+    top: 30px;
+    height: calc(100vh - 60px);
 }
 
 .logo-box {
@@ -88,7 +94,6 @@ body {
     color: var(--wine-primary);
 }
 
-/* Sidebar Menu List */
 .sidebar-menu {
     flex: 1;
 }
@@ -120,15 +125,12 @@ body {
     background: var(--wine-light);
 }
 
-/* Active State (Pill highlight uses the solid Wine gradient) */
 .sidebar-menu li.active a {
     background: var(--wine-accent);
     color: #ffffff;
     box-shadow: 0 8px 20px rgba(159, 18, 57, 0.2);
-    font-weight: 600;
 }
 
-/* Sidebar Bottom Section */
 .bottom-menu {
     padding: 25px 30px 0;
     margin-top: auto;
@@ -147,29 +149,27 @@ body {
     color: var(--text-muted);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.2s ease;
+    padding: 8px 12px;
+    border-radius: var(--item-radius);
+    transition: all 0.2s ease;
 }
 
 .settings-link:hover {
-    color: var(--text-pure);
+    color: var(--wine-primary);
+    background: var(--wine-light);
 }
 
 .logout-icon {
     width: 18px;
     height: 18px;
     stroke: var(--wine-primary);
-    transition: transform 0.2s ease;
 }
 
 .logout-link:hover {
     color: var(--wine-primary);
 }
 
-.logout-link:hover .logout-icon {
-    transform: translateX(4px);
-}
-
-/* --- 4. MAIN CONTENT WORKSPACE --- */
+/* --- 4. MAIN WORKSPACE INFRASTRUCTURE --- */
 .main-content {
     flex: 1;
     display: flex;
@@ -177,7 +177,7 @@ body {
     gap: 30px;
 }
 
-/* --- 5. TOPBAR NAVIGATION (Floating Light Panel) --- */
+/* --- 5. TOPBAR NAVIGATION HEADER --- */
 .topbar {
     background: var(--glass-panel);
     backdrop-filter: var(--glass-blur);
@@ -198,18 +198,17 @@ body {
 }
 
 .left-section h2 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: -0.02em;
 }
 
-/* Soft White-Glass Search Box */
 .search-box input {
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: var(--item-radius);
     padding: 12px 24px;
-    width: 280px;
+    width: 320px;
     color: var(--text-pure);
     font-family: 'Rethink Sans', sans-serif;
     font-size: 0.9rem;
@@ -220,14 +219,8 @@ body {
     outline: none;
     background: #ffffff;
     border-color: rgba(159, 18, 57, 0.3);
-    box-shadow: 0 0 20px rgba(159, 18, 57, 0.08);
 }
 
-.search-box input::placeholder {
-    color: var(--text-muted);
-}
-
-/* Right Section Actions */
 .right-section {
     display: flex;
     align-items: center;
@@ -239,8 +232,6 @@ body {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--text-muted);
-    cursor: pointer;
-    margin-right: 10px;
 }
 
 .action-icon-btn {
@@ -253,20 +244,10 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
-.action-icon-btn:hover {
-    background: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
-}
+.icon-ui { color: var(--text-pure); font-size: 1.1rem; }
 
-.icon-ui {
-    color: var(--text-pure);
-    font-size: 1.1rem;
-}
-
-/* User Profile Widget */
 .user-profile {
     display: flex;
     align-items: center;
@@ -283,245 +264,426 @@ body {
     overflow: hidden;
 }
 
-.avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.avatar-img { width: 100%; height: 100%; object-fit: cover; }
+.profile-info h4 { font-size: 0.95rem; font-weight: 700; line-height: 1.2; }
+.profile-info p { font-family: 'Rethink Sans', sans-serif; font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
 
-.profile-info h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.profile-info p {
-    font-family: 'Rethink Sans', sans-serif;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 600;
-}
-
-/* --- 6. MAIN CONTENT BODY WORKSPACE CANVAS --- */
-/* FIXED: Stripped duplicate glass background, filters, and shadows */
+/* --- 6. NESTED GRID MASTER SYSTEM --- */
 .content-body {
-    flex: 1;
     width: 100%;
+}
+
+.dashboard-structured-grid {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
+    width: 100%;
 }
 
-/* Base Glass Card Styles - Now floats independently on the canvas background gradient */
-.card {
+/* Base Shared Panel Card Aesthetics */
+.matrix-tile {
     background: var(--glass-panel);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-border);
-    border-radius: var(--panel-radius);
+    border-radius: var(--panel-radius); /* Enforced 24px organic curve limit */
+    padding: 24px;
     box-shadow: var(--float-shadow);
-    padding: 28px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
 }
 
-/* --- 7. TOP STATISTICAL CARDS ROW --- */
-.dashboard-overview {
+.tile-tag {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ================= ROW ONE STYLE SPECIFICS ================= */
+.dynamic-row-one {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: 2fr 1fr; /* First card significantly wider than right card */
     gap: 24px;
 }
 
-.card-label {
-    font-family: 'Rethink Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+.identity-large-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
 }
 
-.card-metric {
-    font-size: 2.4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+.tile-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.live-pulse-indicator {
+    width: 8px;
+    height: 8px;
+    background: #16a34a;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+}
+
+.identity-display-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tile-value-large {
+    font-family: 'Geist', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
     color: var(--text-pure);
-    margin-bottom: 8px;
+    line-height: 1;
 }
 
-.card-trend {
+.identity-sub-metrics {
+    display: flex;
+    gap: 10px;
+}
+
+.metric-pill {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: var(--item-radius); /* 14px internal rounded elements */
+}
+
+.metric-pill.positive {
+    background: rgba(22, 163, 74, 0.08);
+    color: #16a34a;
+}
+
+.metric-pill.neutral {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-muted);
+}
+
+.cluster-state-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tile-value {
+    font-family: 'Geist', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+    margin: 12px 0 6px;
+}
+
+.tile-status {
     font-family: 'Rethink Sans', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
+    color: #16a34a;
 }
 
-.card-trend.positive {
-    color: #16a34a; /* Emerald green highlight for upward trends */
-}
-
-.card-trend.neutral {
-    color: var(--text-muted);
-}
-
-/* --- 8. BOTTOM DETAILS GRID SECTION --- */
-.dashboard-details-grid {
+/* ================= ROW TWO STYLE SPECIFICS ================= */
+.dynamic-row-two {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1.4fr 1fr; /* Distinct grid proportions */
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
 }
 
-/* Gender Analytics Card Specifics */
-.gender-split-wrapper {
-    margin-top: 20px;
+/* Left Side: Long and Taller Calendar Component Layout */
+.calendar-table-card {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 480px; /* Taller than surrounding metrics panels */
 }
 
-.gender-meta {
+.calendar-card-header {
     display: flex;
     justify-content: space-between;
-    font-family: 'Rethink Sans', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+    align-items: flex-start;
 }
 
-.gender-percentage {
-    color: var(--wine-primary);
-}
-
-/* Progress Indicator Tracks */
-.ratio-bar-track {
-    background: rgba(15, 23, 42, 0.06);
-    height: 8px;
-    border-radius: 99px;
-    overflow: hidden;
-}
-
-.ratio-bar-fill {
-    height: 100%;
-    border-radius: 99px;
-}
-
-.male-fill {
-    background: var(--wine-primary);
-    width: 52%;
-}
-
-.female-fill {
-    background: var(--wine-accent);
-    width: 48%;
-}
-
-/* Calendar Card Specifics */
-.calendar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-}
-
-.calendar-header .card-label {
-    margin-bottom: 0;
-}
-
-.view-all-link {
-    font-family: 'Rethink Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--wine-primary);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.view-all-link:hover {
-    color: #be123c;
-    text-decoration: underline;
-}
-
-/* Events List Structure */
-.events-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.event-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(0, 0, 0, 0.02);
-    border-radius: var(--item-radius);
-    transition: background 0.2s ease;
-}
-
-.event-item:hover {
-    background: rgba(255, 255, 255, 0.75);
-}
-
-.event-title {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 3px;
+.calendar-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
     color: var(--text-pure);
 }
 
-.event-location {
+.calendar-subtitle {
     font-family: 'Rethink Sans', sans-serif;
     font-size: 0.85rem;
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 500;
 }
 
-/* Event Date Badging */
-.event-date-badge {
-    text-align: right;
-    font-family: 'Rethink Sans', sans-serif;
-    min-width: 80px;
-}
-
-.event-day {
-    font-size: 0.95rem;
-    font-weight: 800;
+.term-badge {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--wine-primary);
-    line-height: 1.2;
+    background: var(--wine-light);
+    padding: 6px 12px;
+    border-radius: 10px;
 }
 
-.event-year {
-    font-size: 0.75rem;
+.table-container {
+    flex: 1;
+    overflow-x: auto;
+}
+
+.calendar-data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Specific Spacing between rows */
+    text-align: left;
+}
+
+.calendar-data-table th {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 16px;
+}
+
+.calendar-data-table tbody tr {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Clean Row Layout Alignment */
+.calendar-data-table td {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.35);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.calendar-data-table td:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--item-radius) 0 0 var(--item-radius); /* Rounded row edges */
+}
+
+.calendar-data-table td:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0 var(--item-radius) var(--item-radius) 0;
+}
+
+/* Row Hover Interaction Schemes */
+.calendar-data-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(159, 18, 57, 0.15);
+    transform: translateY(-2px);
+}
+
+.date-column {
+    font-family: 'Geist', sans-serif;
+    font-weight: 700;
+    color: var(--text-wine);
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.desc-column {
+    font-family: 'Rethink Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--text-pure);
+}
+
+/* Status Indicator Nodes inside Table */
+.status-indicator {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.status-indicator.live { background: rgba(22, 163, 74, 0.08); color: #16a34a; }
+.status-indicator.current { background: var(--wine-primary); color: #ffffff; }
+.status-indicator.pending { background: rgba(0, 0, 0, 0.04); color: var(--text-muted); }
+
+
+/* Right Side: Secondary Grid Container & Matrix System */
+.stats-subgrid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 2-Column Grid Layout containing 4 Small Symmetrical Cards */
+.small-metrics-binary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.small-metric-card-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Enforced Centered Content Alignment */
+    text-align: center;
+    aspect-ratio: 1 / 1; /* Maintains exact identical height and width dimensions */
+    padding: 20px;
+    min-height: 140px;
+}
+
+.tile-value-centered {
+    font-family: 'Geist', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+    margin: 8px 0 4px;
+}
+
+.tile-status-centered {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.78rem;
     font-weight: 600;
 }
 
-/* --- 9. RESPONSIVE LAYOUT ADJUSTMENTS --- */
-@media (max-width: 1100px) {
-    .container {
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    .sidebar {
-        width: 100%;
-        padding: 25px 0;
-    }
-    
-    .search-box input {
-        width: 200px;
-    }
+/* At the bottom right, wide ⏳ SYSTEM INTERVAL countdown card block spanning across the binary sub-grid width */
+.system-interval-countdown-card {
+    grid-column: span 2; /* Perfectly matches length of the four grids displayed around it */
+    background: var(--wine-accent); /* Vibrant Colorful Gradient Background Base */
+    border: none;
+    box-shadow: 0 16px 35px rgba(159, 18, 57, 0.22);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 160px;
+    overflow: hidden;
+    position: relative;
 }
 
-@media (max-width: 968px) {
-    .dashboard-details-grid {
-        grid-template-columns: 1fr;
+.countdown-text-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.countdown-decor-shield {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.12);
+    padding: 4px 12px;
+    width: max-content;
+    border-radius: var(--item-radius);
+    margin-bottom: 8px;
+}
+
+.countdown-timer-value {
+    font-family: 'Geist', sans-serif;
+    font-size: 2.3rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.countdown-description-label {
+    font-family: 'Rethink Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 6px 0 14px;
+    max-width: 280px;
+    line-height: 1.3;
+}
+
+.countdown-footer-progress-track {
+    background: rgba(255, 255, 255, 0.15);
+    height: 5px;
+    width: 85%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill-node {
+    background: #ffffff;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Floating 3D Artwork Illustration Space Area CSS Engine */
+.floating-illustration-space-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    z-index: 1;
+}
+
+.floating-glass-sphere-element {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    top: 10px;
+    left: 10px;
+    animation: floatingOrbMotion 4s ease-in-out infinite;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.floating-orb-secondary {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    bottom: 5px;
+    right: 5px;
+    animation: floatingOrbMotion 4s ease-in-out infinite alternate;
+    animation-delay: -1.5s;
+}
+
+/* --- 7. ANIMATION KEYFRAMES --- */
+@keyframes floatingOrbMotion {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+/* --- 8. FLEXIBLE RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1350px) {
+    .dynamic-row-one { grid-template-columns: 1.5fr 1fr; }
+    .dynamic-row-two { grid-template-columns: 1.1fr 1fr; }
+}
+
+@media (max-width: 1100px) {
+    .dynamic-row-one, .dynamic-row-two {
+        grid-template-columns: 1fr; /* Safe stacking collapse layout logic */
     }
+    .calendar-table-card { min-height: auto; }
+}
+
+@media (max-width: 768px) {
+    .container { flex-direction: column; padding: 0 15px; }
+    .sidebar { width: 100%; height: auto; position: relative; top: 0; padding: 20px 0; }
+    .search-box input { width: 100%; }
+    .topbar { padding: 20px; flex-direction: column; gap: 15px; text-align: center; }
+    .left-section { flex-direction: column; gap: 15px; width: 100%; }
 }
