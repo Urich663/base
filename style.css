@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
 :root {
-    /* Soft Light Pastel Background with a hint of rose/cream wash */
+    /* Soft Light Pastel Background with a hint of cream wash */
     --bg-gradient: linear-gradient(135deg, #fff1f2 0%, #f8fafc 50%, #f3f4f6 100%);
     
     /* Deep Wine Luxury Accents */
